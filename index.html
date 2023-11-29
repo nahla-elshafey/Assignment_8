@@ -2,10 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Assignment 08</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
     <script src="js/employee-management.js"></script>
+    <style>
+        #app div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+    
+        #app div label {
+            margin-bottom: 5px;
+        }
+    
+        #app div input {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+    
+        #app div button {
+            align-self: flex-start;
+            background-color: cadetblue;
+            border-color: cadetblue;
+        }
+    
+        table {
+            border-collapse: collapse;
+            width: 800px; 
+        }
+    
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            width: 200px; 
+        }
+    
+        th {
+            background-color: cadetblue;
+        }
+    </style>
+    
 </head>
 <body>
-    
+
+    <div id="app">
+        <h1>Employee Management System</h1>
+        
+        <!-- Employee Form -->
+        <div>
+            <h2>Add Employee</h2>
+
+            <div>
+                <label for="nameInput">Name:</label>
+                <input type="text" id="nameInput">
+            </div>
+
+            <div>
+                <label for="titleInput">Title:</label>
+                <input type="text" id="titleInput">
+            </div>
+
+            <div>
+                <label for="extensionInput">Extension:</label>
+                <input type="text" id="extensionInput">
+            </div>
+
+            <button onclick="addEmployee()">Add</button>
+            <p id="warningMessage" style="color: red;"></p>
+        </div>
+
+        <!-- Employee Table -->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Extension</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTableBody">
+                <!-- Employee rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
